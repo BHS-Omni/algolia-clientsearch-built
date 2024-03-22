@@ -46,11 +46,7 @@ const createSearchClient = options => {
         hosts: [
             { url: `65.0.106.222:3000`, accept: CallEnum.Read },
             { url: `${appId}.algolia.net`, accept: CallEnum.Write },
-        ].concat(shuffle([
-            { url: `${appId}-1.algolianet.com` },
-            { url: `${appId}-2.algolianet.com` },
-            { url: `${appId}-3.algolianet.com` },
-        ])),
+        ],
         ...options,
         headers: {
             ...auth.headers(),

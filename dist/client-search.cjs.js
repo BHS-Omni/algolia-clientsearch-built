@@ -50,11 +50,7 @@ const createSearchClient = options => {
         hosts: [
             { url: `65.0.106.222:3000`, accept: transporter.CallEnum.Read },
             { url: `${appId}.algolia.net`, accept: transporter.CallEnum.Write },
-        ].concat(clientCommon.shuffle([
-            { url: `${appId}-1.algolianet.com` },
-            { url: `${appId}-2.algolianet.com` },
-            { url: `${appId}-3.algolianet.com` },
-        ])),
+        ],
         ...options,
         headers: {
             ...auth.headers(),
