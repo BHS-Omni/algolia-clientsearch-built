@@ -44,7 +44,7 @@ const createSearchClient = options => {
     const auth = createAuth(options.authMode !== undefined ? options.authMode : AuthMode.WithinHeaders, appId, options.apiKey);
     const transporter = createTransporter({
         hosts: [
-            { url: `65.0.106.222:3000`, accept: CallEnum.Read },
+            { url: `${appId}-dsn.algolia.net`, accept: CallEnum.Read },
             { url: `${appId}.algolia.net`, accept: CallEnum.Write },
         ],
         ...options,
